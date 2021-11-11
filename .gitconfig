@@ -1,0 +1,21 @@
+[user]
+	name = damszew 
+	email = damian.szewczyk111@gmail.com
+
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+[alias]
+	amend = commit --amend
+	s = status -s
+	l = log --decorate --oneline -10 --graph
+	b = branch
+	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+	showfiles = show --name-only
+
+[format]
+	pretty = format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[core]
+	excludesFile = ~/.gitignore
+
