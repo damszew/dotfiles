@@ -19,5 +19,3 @@
 [core]
 	excludesFile = ~/.gitignore
 
-[diff]
-	external = difft
