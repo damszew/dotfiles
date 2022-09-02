@@ -195,7 +195,7 @@ alias tarlist='tar -tvf'
 
 alias ls='exa'
 alias lt='ls --tree'
-alias cat='bat'
+alias cat='bat -p'
 alias grep='rg'
 alias mi='micro'
 
