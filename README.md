@@ -2,8 +2,9 @@
 
 ## How to setup and use?
 
-https://www.atlassian.com/git/tutorials/dotfiles
-
+1. Clone this repo to `${HOME}/dotfiles` directory
+2. Run `./link_dotfiles.sh`
+3. Install other apps mentioned in [Installs](#installs)
 
 ## Installs
 
