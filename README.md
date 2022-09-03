@@ -16,6 +16,7 @@ code
 deb-get
 docker-ce
 discord
+dropbox
 google-chrome-stable
 obsidian
 rpi-imager
