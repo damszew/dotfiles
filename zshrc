@@ -147,7 +147,5 @@ alias lt='ls --tree'
 alias cat='bat'
 alias grep='rg'
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
 eval "$(starship init zsh)"
 
