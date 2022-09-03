@@ -9,7 +9,7 @@ install_file() {
     then
         local backup_file=${dot_file}_backup
         echo "'${dot_file}' already exists! Creating backup -> '${backup_file}'"
-        mv ${HOME}/${dot_file} ${HOME}/${backup_file}
+        mv ${dot_file} ${backup_file}
     fi
 
     if [ -L ${dot_file} ] # FILE exists and is a symbolic link
