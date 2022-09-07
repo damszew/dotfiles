@@ -37,6 +37,7 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 ### Other
 
 ```bash
+vim
 git
 curl
 rust
