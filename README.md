@@ -11,6 +11,7 @@
 ### via [deb-get](https://github.com/wimpysworld/deb-get)
 
 ```plain
+bat
 balena-etcher-electron
 code
 deb-get
@@ -27,8 +28,19 @@ spotify-client
 ### Git credentials caching
 
 ```bash
-sudo apt-get install libsecret-1-0 libsecret-1-dev
+sudo apt-get install build-essential libsecret-1-0 libsecret-1-dev
 cd /usr/share/doc/git/contrib/credential/libsecret
 sudo make
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+```
+
+### Other
+
+```bash
+git
+curl
+rust
+starship
+exa
+ripgrep
 ```
