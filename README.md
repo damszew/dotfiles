@@ -44,4 +44,5 @@ rust
 starship
 exa
 ripgrep
+git-branchless
 ```

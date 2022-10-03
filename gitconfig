@@ -6,7 +6,6 @@
 	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 [alias]
-	amend = commit --amend
 	s = status -s
 	l = log --decorate --oneline -10 --graph
 	b = branch
