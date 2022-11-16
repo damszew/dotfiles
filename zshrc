@@ -149,3 +149,8 @@ alias grep='rg'
 
 eval "$(starship init zsh)"
 
+export DENO_INSTALL="/home/damian/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+eval "$(just --completions zsh)"
+eval "$(deno completions zsh)"

@@ -209,11 +209,16 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-eval "$(starship init bash)"
+export DENO_INSTALL="/home/damian/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
+eval "$(starship init bash)"
+eval "$(just --completions bash)"
+eval "$(deno completions bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 . "$HOME/.cargo/env"
+
