@@ -183,7 +183,7 @@ PS1="${BRED}(${BGREEN}\w${BRED}) ${BORANGE}\h${BBLUE}\$(parse_git_branch) ${NORM
 
 unset BGREEN GREEN BRED RED BBLUE BLUE BORANGE ORANGE NORMAL 
 
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER=firefox
 
 alias cp='cp -v'
