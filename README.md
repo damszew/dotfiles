@@ -41,8 +41,17 @@ vim
 git
 curl
 rust
-starship
 exa
 ripgrep
+```
+
+### Nix
+
+via `nix-env`
+
+```bash
 git-branchless
+just
+neovim
+starship
 ```
