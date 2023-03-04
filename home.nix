@@ -28,4 +28,8 @@
     pkgs.direnv
     pkgs.ripgrep
   ];
+
+  home.file.".bashrc".source = ~/dotfiles/bashrc;
+  home.file.".gitconfig".source = ~/dotfiles/gitconfig;
+  home.file.".gitignore".source = ~/dotfiles/gitignore;
 }
