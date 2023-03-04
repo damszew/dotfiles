@@ -184,7 +184,7 @@ PS1="${BRED}(${BGREEN}\w${BRED}) ${BORANGE}\h${BBLUE}\$(parse_git_branch) ${NORM
 unset BGREEN GREEN BRED RED BBLUE BLUE BORANGE ORANGE NORMAL 
 
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=google-chrome
 
 alias cp='cp -v'
 alias mv='mv -v'
@@ -215,6 +215,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 eval "$(starship init bash)"
 eval "$(just --completions bash)"
 eval "$(deno completions bash)"
+eval "$(direnv hook bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 # Install Ruby Gems to ~/gems

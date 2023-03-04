@@ -50,8 +50,13 @@ ripgrep
 via `nix-env`
 
 ```bash
+bat
+exa
 git-branchless
+git-bug
 just
 neovim
+nix
+ripgrep
 starship
 ```
