@@ -2,28 +2,36 @@
 
 ## How to setup and use?
 
-1. Clone this repo to `${HOME}/dotfiles` directory
-2. Run `./link_dotfiles.sh`
-3. Install other apps mentioned in [Installs](#installs)
+1. Install `nix` -> https://zero-to-nix.com/concepts/nix-installer
+2. Install `home-manager` -> https://nix-community.github.io/home-manager/index.html
+3. Clone this repo to `${HOME}/dotfiles` directory
+4. Symlink `home.nix` -> `ln -sf ${HOME}/dotfiles/home.nix ${HOME}/.config/nixpkgs/home.nix`
+5. Install other apps mentioned in [Installs](#installs)
 
 ## Installs
 
-### via [deb-get](https://github.com/wimpysworld/deb-get)
+### Classic packages
 
 ```plain
-bat
 balena-etcher-electron
 code
-deb-get
 docker-ce
-discord
 dropbox
 google-chrome-stable
-obsidian
 rpi-imager
 slack-desktop
-spotify-client
+git
 ```
+
+
+### Flatpaks
+
+```plain
+discord
+spotify
+obsidian
+```
+
 
 ### Git credentials caching
 
@@ -34,29 +42,17 @@ sudo make
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 ```
 
-### Other
-
-```bash
-vim
-git
-curl
-rust
-exa
-ripgrep
-```
 
 ### Nix
 
 via `nix-env`
 
 ```bash
-bat
-exa
+atuin
 git-branchless
-git-bug
-just
 neovim
 nix
-ripgrep
-starship
+lazygit
+nushell
+zola
 ```
