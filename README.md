@@ -13,7 +13,7 @@
 ### Classic packages
 
 ```plain
-balena-etcher-electron
+1password
 code
 docker-ce
 dropbox
@@ -23,13 +23,13 @@ slack-desktop
 git
 ```
 
-
-### Flatpaks
+### Flatpak
 
 ```plain
 discord
 spotify
 obsidian
+firefox
 ```
 
 
@@ -50,7 +50,6 @@ via `nix-env`
 ```bash
 atuin
 git-branchless
-neovim
 nix
 lazygit
 nushell
