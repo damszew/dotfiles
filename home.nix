@@ -27,9 +27,11 @@
     pkgs.just
     pkgs.direnv
     pkgs.ripgrep
+    pkgs.neovim
   ];
 
   home.file.".bashrc".source = ~/dotfiles/bashrc;
   home.file.".gitconfig".source = ~/dotfiles/gitconfig;
   home.file.".gitignore".source = ~/dotfiles/gitignore;
+  home.file.".config/nvim".source = ~/dotfiles/nvim;
 }
