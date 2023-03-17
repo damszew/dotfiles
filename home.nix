@@ -23,14 +23,41 @@
     pkgs.htop
     pkgs.bat
     pkgs.exa
-    pkgs.starship
     pkgs.just
-    pkgs.direnv
     pkgs.ripgrep
     pkgs.neovim
   ];
 
-  home.file.".bashrc".source = ~/dotfiles/bashrc;
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ls = "exa";
+      ll = "exa --all --long --classify";
+      la = "exa --all";
+      lt = "exa --tree";
+
+      cat = "bat -p";
+      grep = "rg";
+
+      cp = "cp -v";
+      mv = "mv -v";
+      rm = "rm -v";
+
+    };
+    sessionVariables = {
+      EDITOR = "nvim";
+      BROWSER = "google-chrome";
+    };
+    bashrcExtra = ''
+      . ~/dotfiles/bashrc
+
+      eval "$(just --completions bash)" # never versions of nixpkgs install this automatically
+    '';
+  };
+
+  programs.starship.enable = true;
+  programs.direnv.enable = true;
+
   home.file.".gitconfig".source = ~/dotfiles/gitconfig;
   home.file.".gitignore".source = ~/dotfiles/gitignore;
   home.file.".config/nvim/" = {

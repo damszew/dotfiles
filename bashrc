@@ -84,14 +84,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -a'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -183,21 +175,8 @@ PS1="${BRED}(${BGREEN}\w${BRED}) ${BORANGE}\h${BBLUE}\$(parse_git_branch) ${NORM
 
 unset BGREEN GREEN BRED RED BBLUE BLUE BORANGE ORANGE NORMAL 
 
-export EDITOR=nvim
-export BROWSER=google-chrome
-
-alias cp='cp -v'
-alias mv='mv -v'
-alias rm='rm -v'
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias rr='ranger'
-alias tarlist='tar -tvf'
-
-alias ls='exa'
-alias lt='ls --tree'
-alias cat='bat -p'
-alias grep='rg'
-alias mi='micro'
+export EDITOR=nvim # TODO: Delete -> moved to .profile
+export BROWSER=google-chrome # TODO: Delete -> moved to .profile
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -212,10 +191,7 @@ fi
 export DENO_INSTALL="/home/damian/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-eval "$(starship init bash)"
-eval "$(just --completions bash)"
 eval "$(deno completions bash)"
-eval "$(direnv hook bash)"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 # Install Ruby Gems to ~/gems
