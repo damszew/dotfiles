@@ -26,6 +26,8 @@
     pkgs.just
     pkgs.ripgrep
     pkgs.neovim
+    pkgs.lazygit
+    pkgs.git-branchless
   ];
 
   programs.bash = {
