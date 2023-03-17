@@ -108,73 +108,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Added stuff
-
-# Functions
-extract () {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)	tar xjf $1		;;
-			*.tar.gz)	tar xzf $1		;;
-			*.bz2)		bunzip2 $1		;;
-			*.rar)		rar x $1		;;
-			*.gz)		gunzip $1		;;
-			*.tar)		tar xf $1		;;
-			*.tbz2)		tar xjf $1		;;
-			*.tgz)		tar xzf $1		;;
-			*.zip)		unzip $1		;;
-			*.Z)		uncompress $1	;;
-			*)			echo "'$1' cannot be extracted via extract()" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
-}
-
-psgrep() {
-	if [ ! -z $1 ] ; then
-		echo "Grepping for processes matching $1..."
-		ps aux | grep -v grep | grep $1
-	else
-		echo "!! Need name to grep for"
-	fi
-}
-
-ff() {
-	if [ ! -z $1 ] ; then
-		echo "Trying to fing file matching *$1*..."
-		find . -name *$1* -print
-	else
-		echo "!! Need name to look for"
-	fi
-}
-
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
-}
-
-# Prompt
-BGREEN='\[\033[1;32m\]'
-GREEN='\[\033[0;32m\]'
-BRED='\[\033[1;31m\]'
-RED='\[\033[0;31m\]'
-BBLUE='\[\033[1;34m\]'
-BLUE='\[\033[0;34m\]'
-BORANGE='\[\033[1;33m\]'
-ORANGE='\[\033[0;33m\]'
-NORMAL='\[\033[00m\]'
-BNORMAL='\[\033[1;00m\]'
-CYAN='\[\033[36m\]'
-
-
-#       (       PWD        )      username         git_branch                $        cli_text
-PS1="${BRED}(${BGREEN}\w${BRED}) ${BORANGE}\h${BBLUE}\$(parse_git_branch) ${NORMAL}\$ ${NORMAL}"
-
-# Emoji based on error code of last command
-#PS1='$(if [[ $? == 0 ]]; then printf "\xf0\x9f\x98\x83"; else printf "\xf0\x9f\x98\x9c"; fi)\[\e[0m\] \u \w $ '
-
-unset BGREEN GREEN BRED RED BBLUE BLUE BORANGE ORANGE NORMAL 
-
 export EDITOR=nvim # TODO: Delete -> moved to .profile
 export BROWSER=google-chrome # TODO: Delete -> moved to .profile
 
@@ -197,5 +130,4 @@ eval "$(deno completions bash)"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
-. "$HOME/.cargo/env"
 
