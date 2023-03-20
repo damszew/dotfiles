@@ -50,6 +50,9 @@
       EDITOR = "nvim";
       BROWSER = "google-chrome";
     };
+    profileExtra = ''
+      if [ -e /home/damian/.nix-profile/etc/profile.d/nix.sh ]; then . /home/damian/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+    '';
     bashrcExtra = ''
       . ~/dotfiles/bashrc
       . $HOME/.cargo/env # normally rustup installs it
