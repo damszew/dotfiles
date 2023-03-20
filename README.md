@@ -5,8 +5,8 @@
 1. Install `nix` -> https://zero-to-nix.com/concepts/nix-installer
 2. Install `home-manager` -> https://nix-community.github.io/home-manager/index.html
 3. Clone this repo to `${HOME}/dotfiles` directory
-4. Symlink `home.nix` -> `ln -sf ${HOME}/dotfiles/home.nix ${HOME}/.config/nixpkgs/home.nix`
-5. Install other apps mentioned in [Installs](#installs)
+4. Symlink `home.nix` -> `ln -sf ${HOME}/dotfiles/home.nix ${HOME}/.config/home-manager/home.nix`
+5. Install other apps mentioned from [Installs](#installs)
 
 ## Installs
 
@@ -48,10 +48,7 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 via `nix-env`
 
 ```bash
-atuin
-git-branchless
 nix
-lazygit
 nushell
 zola
 ```
