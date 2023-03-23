@@ -20,7 +20,6 @@ dropbox
 google-chrome-stable
 rpi-imager
 slack-desktop
-git
 ```
 
 ### Flatpak
@@ -32,23 +31,3 @@ obsidian
 firefox
 ```
 
-
-### Git credentials caching
-
-```bash
-sudo apt-get install build-essential libsecret-1-0 libsecret-1-dev
-cd /usr/share/doc/git/contrib/credential/libsecret
-sudo make
-git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
-```
-
-
-### Nix
-
-via `nix-env`
-
-```bash
-nix
-nushell
-zola
-```

@@ -104,8 +104,24 @@
   programs.starship.enable = true;
   programs.direnv.enable = true;
 
-  home.file.".gitconfig".source = ~/dotfiles/gitconfig;
-  home.file.".gitignore".source = ~/dotfiles/gitignore;
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull;
+
+    userName = "damszew";
+    userEmail = "damian.szewczyk111@gmail.com";
+    aliases = {
+      s = "status -s";
+      l = "log --decorate --oneline -10 --graph";
+      b = "branch";
+      showfiles = "show --name-only";
+    };
+    extraConfig = {
+      credential.helper = "libsecret";
+      format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
+    };
+  };
+
   home.file.".config/nvim/" = {
     source = ~/dotfiles/nvim;
     recursive = true;
