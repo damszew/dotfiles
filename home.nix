@@ -104,6 +104,11 @@
   programs.starship.enable = true;
   programs.direnv.enable = true;
 
+  # Ctrl-r for fuzzy find cmd history
+  # Ctrl-t for finding file paths
+  # Alt-c for fuzzy finding cd
+  programs.fzf.enable = true;
+
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
