@@ -28,6 +28,7 @@
     pkgs.neovim
     pkgs.lazygit
     pkgs.git-branchless
+    pkgs.fd
   ];
 
   programs.bash = {
@@ -88,16 +89,6 @@
           echo "!! Need process to look for"
         fi
       }
-
-      ff() {
-        if [ ! -z $1 ] ; then
-          echo "Trying to fing file matching *$1*..."
-          find . -name *$1* -print
-        else
-          echo "!! Need file to look for"
-        fi
-      }
-
     '';
   };
 
