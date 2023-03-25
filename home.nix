@@ -26,6 +26,7 @@
     pkgs.lazygit
     pkgs.git-branchless
     pkgs.fd
+    pkgs.vscode # May cause problems with extensions on NixOS
   ];
 
   programs.bash = {
