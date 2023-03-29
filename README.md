@@ -17,7 +17,6 @@
 docker-ce
 dropbox
 google-chrome-stable
-rpi-imager
 slack-desktop
 ```
 

@@ -49,6 +49,8 @@
       EDITOR = "nvim";
       BROWSER = "google-chrome";
     };
+
+    # May not be needed due to targets.genericLinux.enable
     profileExtra = ''
       if [ -e /home/damian/.nix-profile/etc/profile.d/nix.sh ]; then . /home/damian/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
     '';
@@ -120,4 +122,6 @@
     source = ~/dotfiles/nvim;
     recursive = true;
   };
+
+  targets.genericLinux.enable = true;
 }
