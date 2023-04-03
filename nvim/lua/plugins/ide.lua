@@ -27,4 +27,11 @@ return {
       },
     },
   },
+
+  -- Sticky context
+  { "nvim-treesitter/nvim-treesitter-context" },
+
+  --"gcc" to comment out line
+  --"gc" to comment visual regions/lines
+  { "numToStr/Comment.nvim", opts = {} },
 }
