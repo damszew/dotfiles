@@ -29,3 +29,23 @@ obsidian
 firefox
 ```
 
+## Cheatsheet
+
+### nix-env
+
+| action       | cmd    |
+|-------------------------------------------- | --------------------------------- |
+| update package list                         | `sudo -i nix-channel --update`      |
+| upgrade installed                           | `nix-env -u`                        |
+| show generations                            | `nix-env --list-generations`        |
+| rollback                                    | `nix-env --rollback`                |
+| remove old generations (keep only latest 5) | `nix-env --delete-generations +5`   |
+
+### home-manager
+
+| action                 | cmd                             |
+|------------------------|---------------------------------|
+| upgrade home-manager   | `home-manager switch`             |
+| show generations       | `home-manager generations`        |
+| remove old generations | `home-manager remove-generations` |
+
