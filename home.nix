@@ -50,16 +50,9 @@
       BROWSER = "google-chrome";
     };
 
-    # May not be needed due to targets.genericLinux.enable
-    profileExtra = ''
-      if [ -e /home/damian/.nix-profile/etc/profile.d/nix.sh ]; then . /home/damian/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-    '';
     bashrcExtra = ''
       . ~/dotfiles/bashrc
       . $HOME/.cargo/env # normally rustup installs it
-
-
-      eval "$(just --completions bash)" # never versions of nixpkgs install this automatically
 
       extract () {
         if [ -f $1 ] ; then
