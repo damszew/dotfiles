@@ -27,6 +27,8 @@
     pkgs.git-branchless
     pkgs.fd
     pkgs.vscode # May cause problems with extensions on NixOS
+    pkgs.spotify
+    pkgs.obsidian
   ];
 
   programs.bash = {
