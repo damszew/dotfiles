@@ -24,8 +24,6 @@ slack-desktop
 
 ```plain
 discord
-spotify
-obsidian
 firefox
 ```
 
