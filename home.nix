@@ -48,7 +48,6 @@
 
     };
     sessionVariables = {
-      EDITOR = "nvim";
       BROWSER = "google-chrome";
     };
 
@@ -111,6 +110,11 @@
       credential.helper = "libsecret";
       format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
     };
+  };
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
   };
 
   home.file.".config/nvim/" = {
