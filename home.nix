@@ -115,6 +115,32 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
+    settings = {
+      theme = "dracula";
+
+      editor = {
+        line-number = "relative";
+        cursorline = true;
+        bufferline = "multiple";
+
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+
+        lsp = {
+          display-inlay-hints = true;
+        };
+      };
+
+      keys.normal = {
+        A-j = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
+        A-k = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before" ];
+        esc = [ "collapse_selection" "keep_primary_selection" ];
+      };
+    };
   };
 
   home.file.".config/nvim/" = {
