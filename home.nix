@@ -133,6 +133,11 @@
         lsp = {
           display-inlay-hints = true;
         };
+
+        indent-guides = {
+          render = true;
+          character = "┊"; # "▏", "┆", "┊", "⸽"
+        };
       };
 
       keys.normal = {
