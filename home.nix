@@ -107,6 +107,7 @@
       showfiles = "show --name-only";
     };
     extraConfig = {
+      push.autoSetupRemote = true;
       credential.helper = "libsecret";
       format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
     };
