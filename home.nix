@@ -29,6 +29,7 @@
     pkgs.vscode # May cause problems with extensions on NixOS
     pkgs.spotify
     pkgs.obsidian
+    pkgs.ubuntu_font_family
   ];
 
   programs.bash = {
@@ -149,10 +150,14 @@
     };
   };
 
-  home.file.".config/nvim/" = {
+  home.file."${config.xdg.configHome}/nvim/" = {
     source = ~/dotfiles/nvim;
     recursive = true;
   };
+  home.file."${config.xdg.configHome}/wezterm/wezterm.lua" = {
+    source = ~/dotfiles/wezterm.lua;
+  };
 
   targets.genericLinux.enable = true;
+  fonts.fontconfig.enable = true;
 }
