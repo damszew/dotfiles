@@ -29,7 +29,8 @@
     pkgs.vscode # May cause problems with extensions on NixOS
     pkgs.spotify
     pkgs.obsidian
-    pkgs.ubuntu_font_family
+    # pkgs.ubuntu_font_family
+    pkgs.commit-mono
   ];
 
   programs.bash = {

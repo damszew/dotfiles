@@ -21,8 +21,14 @@ config.hide_tab_bar_if_only_one_tab = true
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- Use ubuntu default font
-config.font = wezterm.font 'Ubuntu Mono'
-config.font_size = 13.0
+-- config.font = wezterm.font 'Ubuntu Mono'
+-- config.font_size = 13.0
+config.font = wezterm.font_with_fallback {
+  { family="CommitMono", weight=450, style="Normal"},
+  { family="CommitMono", weight=450, style="Italic"},
+  { family="CommitMono", weight="Bold", style="Normal"},
+  { family="CommitMono", weight="Bold", style="Italic"},
+}
 
 config.keys = {
   -- Change QuickCopyMode due to conflicting key-binding with 1Password
