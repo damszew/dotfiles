@@ -19,7 +19,7 @@
   home.packages = [
     pkgs.htop
     pkgs.bat
-    pkgs.exa
+    pkgs.eza
     pkgs.just
     pkgs.ripgrep
     pkgs.neovim
@@ -35,10 +35,10 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      ls = "exa";
-      ll = "exa --all --long --classify";
-      la = "exa --all";
-      lt = "exa --tree";
+      ls = "eza";
+      ll = "eza --all --long --classify";
+      la = "eza --all";
+      lt = "eza --tree";
 
       cat = "bat -p";
       grep = "rg";
