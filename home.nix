@@ -161,6 +161,39 @@
     source = ~/dotfiles/wezterm.lua;
   };
 
+  dconf.settings = {
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "code.desktop"
+        "google-chrome.desktop"
+        "firefox.desktop"
+        "1password.desktop"
+        "com.discordapp.Discord.desktop"
+      ];
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      enable-hot-corners = false;
+    };
+
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/damian/dotfiles/wallpaper.png";
+      picture-uri-dark = "file:///home/damian/dotfiles/wallpaper.png";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
+      {
+        binding = "<Super>Return";
+        command = "x-terminal-emulator";
+        name = "Open terminal";
+      };
+  };
+
   targets.genericLinux.enable = true;
   fonts.fontconfig.enable = true;
 }
