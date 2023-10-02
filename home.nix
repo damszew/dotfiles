@@ -49,9 +49,7 @@
       rm = "rm -v";
 
     };
-    sessionVariables = {
-      BROWSER = "google-chrome";
-    };
+    sessionVariables = { BROWSER = "google-chrome"; };
 
     bashrcExtra = ''
       . ~/dotfiles/bashrc
@@ -111,7 +109,8 @@
     extraConfig = {
       push.autoSetupRemote = true;
       credential.helper = "libsecret";
-      format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
+      format.pretty =
+        "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
     };
   };
 
@@ -133,9 +132,7 @@
           select = "underline";
         };
 
-        lsp = {
-          display-inlay-hints = true;
-        };
+        lsp = { display-inlay-hints = true; };
 
         indent-guides = {
           render = true;
@@ -145,7 +142,12 @@
 
       keys.normal = {
         A-j = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
-        A-k = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before" ];
+        A-k = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "move_line_up"
+          "paste_before"
+        ];
         esc = [ "collapse_selection" "keep_primary_selection" ];
       };
     };
