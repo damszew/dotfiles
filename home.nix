@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "damian";
   home.homeDirectory = "/home/damian";
 
@@ -16,21 +18,23 @@
 
   programs.home-manager.enable = true;
 
-  home.packages = [
-    pkgs.htop
-    pkgs.bat
-    pkgs.eza
-    pkgs.just
-    pkgs.ripgrep
-    pkgs.neovim
-    pkgs.lazygit
-    pkgs.git-branchless
-    pkgs.fd
-    pkgs.vscode # May cause problems with extensions on NixOS
-    pkgs.spotify
-    pkgs.obsidian
-    # pkgs.ubuntu_font_family
-    pkgs.commit-mono
+  home.packages = with pkgs; [
+    htop
+    bat
+    eza
+    just
+    ripgrep
+    neovim
+    lazygit
+    git-branchless
+    fd
+    vscode # May cause problems with extensions on NixOS
+    spotify
+    obsidian
+    # ubuntu_font_family
+    commit-mono
+    alejandra # nix formatter untill `nil` works in my helix setup
+    taplo
   ];
 
   programs.bash = {
@@ -47,9 +51,8 @@
       cp = "cp -v";
       mv = "mv -v";
       rm = "rm -v";
-
     };
-    sessionVariables = { BROWSER = "google-chrome"; };
+    sessionVariables = {BROWSER = "google-chrome";};
 
     bashrcExtra = ''
       . ~/dotfiles/bashrc
@@ -109,8 +112,7 @@
     extraConfig = {
       push.autoSetupRemote = true;
       credential.helper = "libsecret";
-      format.pretty =
-        "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
+      format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
     };
   };
 
@@ -132,7 +134,7 @@
           select = "underline";
         };
 
-        lsp = { display-inlay-hints = true; };
+        lsp = {display-inlay-hints = true;};
 
         indent-guides = {
           render = true;
@@ -141,15 +143,40 @@
       };
 
       keys.normal = {
-        A-j = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
+        A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
         A-k = [
           "extend_to_line_bounds"
           "delete_selection"
           "move_line_up"
           "paste_before"
         ];
-        esc = [ "collapse_selection" "keep_primary_selection" ];
+        esc = ["collapse_selection" "keep_primary_selection"];
       };
+    };
+
+    languages = {
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = "alejandra"; # For some reason `nil` doesn't fmt devenv.nix;
+        }
+        {
+          name = "toml";
+          auto-format = true;
+        }
+        {
+          name = "rust";
+          auto-pairs = {
+            "(" = ")";
+            "{" = "}";
+            "[" = "]";
+            "\"" = "\"";
+            "`" = "`";
+            "<" = ">";
+          };
+        }
+      ];
     };
   };
 
@@ -183,15 +210,14 @@
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Super>q" ];
+      close = ["<Super>q"];
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
-      {
-        binding = "<Super>Return";
-        command = "x-terminal-emulator";
-        name = "Open terminal";
-      };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>Return";
+      command = "x-terminal-emulator";
+      name = "Open terminal";
+    };
   };
 
   targets.genericLinux.enable = true;
