@@ -28,6 +28,7 @@
     lazygit
     git-branchless
     fd
+    jq
     vscode # May cause problems with extensions on NixOS
     spotify
     obsidian
