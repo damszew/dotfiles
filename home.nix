@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   home.username = "damian";
   home.homeDirectory = "/home/damian";
@@ -53,7 +52,7 @@
       mv = "mv -v";
       rm = "rm -v";
     };
-    sessionVariables = {BROWSER = "google-chrome";};
+    sessionVariables = { BROWSER = "google-chrome"; };
 
     bashrcExtra = ''
       . ~/dotfiles/bashrc
@@ -91,7 +90,10 @@
   };
 
   programs.starship.enable = true;
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   # Ctrl-r for fuzzy find cmd history
   # Ctrl-t for finding file paths
@@ -135,7 +137,7 @@
           select = "underline";
         };
 
-        lsp = {display-inlay-hints = true;};
+        lsp = { display-inlay-hints = true; };
 
         indent-guides = {
           render = true;
@@ -144,14 +146,14 @@
       };
 
       keys.normal = {
-        A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
+        A-j = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
         A-k = [
           "extend_to_line_bounds"
           "delete_selection"
           "move_line_up"
           "paste_before"
         ];
-        esc = ["collapse_selection" "keep_primary_selection"];
+        esc = [ "collapse_selection" "keep_primary_selection" ];
       };
     };
 
@@ -211,7 +213,7 @@
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Super>q"];
+      close = [ "<Super>q" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
