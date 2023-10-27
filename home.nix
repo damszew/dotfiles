@@ -32,7 +32,6 @@
     obsidian
     # ubuntu_font_family
     commit-mono
-    alejandra # nix formatter untill `nil` works in my helix setup
     taplo
   ];
 
