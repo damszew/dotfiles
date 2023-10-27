@@ -23,7 +23,6 @@
     eza
     just
     ripgrep
-    neovim
     lazygit
     git-branchless
     fd
@@ -183,10 +182,6 @@
     };
   };
 
-  home.file."${config.xdg.configHome}/nvim/" = {
-    source = ~/dotfiles/nvim;
-    recursive = true;
-  };
   home.file."${config.xdg.configHome}/wezterm/wezterm.lua" = {
     source = ~/dotfiles/wezterm.lua;
   };
