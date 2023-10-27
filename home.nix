@@ -191,7 +191,6 @@
         "org.gnome.Nautilus.desktop"
         "code.desktop"
         "google-chrome.desktop"
-        "firefox.desktop"
         "1password.desktop"
         "com.discordapp.Discord.desktop"
       ];

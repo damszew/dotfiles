@@ -24,7 +24,6 @@ slack-desktop
 
 ```plain
 discord
-firefox
 ```
 
 ## Cheatsheet
