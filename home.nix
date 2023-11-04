@@ -182,7 +182,7 @@
   };
 
   home.file."${config.xdg.configHome}/wezterm/wezterm.lua" = {
-    source = ~/dotfiles/wezterm.lua;
+    source = ./wezterm.lua;
   };
 
   dconf.settings = {
