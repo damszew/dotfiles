@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      # hardware scan already included in flake.nix
+      # ./hardware-configuration.nix
     ];
 
   # Bootloader.
