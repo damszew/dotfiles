@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -97,8 +97,34 @@
     allowUnfree = true;
     allowUnfreePredicate = (_: true); # WA for https://github.com/nix-community/home-manager/issues/2942
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true; # store optimise after each `nix` call
+  };
+  nix.optimise = {
+    # periodic `nix store --optimise`
+    automatic = true;
+    dates = [ "weekly" ];
+  };
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      # Auto-updating nixpkgs
+      # "--update-input"
+      # "nixpkgs"
+      # "--no-write-lock-file"
 
+      "-L" # print build logs
+    ];
+    dates = "weekly";
+    randomizedDelaySec = "45min";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

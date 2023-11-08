@@ -11,25 +11,27 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      nixos-vm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          # shared
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.damian = import ./home.nix;
-            };
-          }
+      nixos-vm = nixpkgs.lib.nixosSystem
+        {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            # shared
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.damian = import ./home.nix;
+              };
+            }
 
-          # per-machine
-          ./hardware-configuration.nix
-          { networking.hostName = "nixos-vm"; }
-        ];
-      };
+            # per-machine
+            ./hardware-configuration.nix
+            { networking.hostName = "nixos-vm"; }
+          ];
+        };
     };
   };
 }
