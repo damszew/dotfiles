@@ -30,6 +30,7 @@
     vscode # May cause problems with extensions on NixOS
     spotify
     obsidian
+    discord
     # ubuntu_font_family
     commit-mono
     taplo

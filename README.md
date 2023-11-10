@@ -20,12 +20,6 @@ google-chrome-stable
 slack-desktop
 ```
 
-### Flatpak
-
-```plain
-discord
-```
-
 ## Cheatsheet
 
 ### nix-env
