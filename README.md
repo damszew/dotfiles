@@ -13,7 +13,6 @@
 ### Classic packages
 
 ```plain
-1password
 dropbox
 google-chrome-stable
 slack-desktop
