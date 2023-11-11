@@ -34,6 +34,8 @@
     # ubuntu_font_family
     commit-mono
     taplo
+    slack
+    google-chrome
   ];
 
   programs.bash = {
@@ -216,6 +218,8 @@
       name = "Open terminal";
     };
   };
+
+  services.dropbox.enable = true;
 
   targets.genericLinux.enable = true;
   fonts.fontconfig.enable = true;
