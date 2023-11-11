@@ -14,7 +14,6 @@
 
 ```plain
 1password
-docker-ce
 dropbox
 google-chrome-stable
 slack-desktop
