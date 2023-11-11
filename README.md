@@ -17,8 +17,8 @@
 
 ### nix-env
 
-| action       | cmd    |
-|-------------------------------------------- | --------------------------------- |
+| action                                      | cmd                                 |
+|-------------------------------------------- | ----------------------------------- |
 | update package list                         | `sudo -i nix-channel --update`      |
 | upgrade installed                           | `nix-env -u`                        |
 | show generations                            | `nix-env --list-generations`        |
@@ -27,12 +27,16 @@
 
 ### home-manager
 
-| action                 | cmd                             |
-|------------------------|---------------------------------|
+| action                 | cmd                               |
+|------------------------|-----------------------------------|
 | upgrade home-manager   | `home-manager switch`             |
 | show generations       | `home-manager generations`        |
 | remove old generations | `home-manager remove-generations` |
 
 ### nix flakes
 
-todo
+| action                     | cmd                                          |
+|--------------------------- | -------------------------------------------- |
+| update inputs in lock file | `nix flake update`                           |
+| switch config using flake  | `nixos-rebuild switch --flake .`             |
+| remove old generations     | `nix-collect-garbage --delete-older-than 1w` |
