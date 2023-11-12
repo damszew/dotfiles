@@ -195,7 +195,7 @@
         "code.desktop"
         "google-chrome.desktop"
         "1password.desktop"
-        "com.discordapp.Discord.desktop"
+        "discord.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
