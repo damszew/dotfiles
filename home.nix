@@ -56,9 +56,6 @@
     sessionVariables = { BROWSER = "google-chrome"; };
 
     bashrcExtra = ''
-      . ~/dotfiles/bashrc
-      . $HOME/.cargo/env # normally rustup installs it
-
       extract () {
         if [ -f $1 ] ; then
           case $1 in
