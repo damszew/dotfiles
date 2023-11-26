@@ -9,9 +9,16 @@
 ### non-NixOS
 
 1. [Install `nix`](https://zero-to-nix.com/concepts/nix-installer)
-2. [Install `home-manager`](https://nix-community.github.io/home-manager/index.html)
-3. Clone this repo to `${HOME}/dotfiles` directory
-4. Symlink `home.nix` -> `ln -sf ${HOME}/dotfiles/home.nix ${HOME}/.config/home-manager/home.nix`
+2. Clone this repo to `${HOME}/dotfiles` directory
+3. Activate config with `nix run .#hm -- switch`
+   1. Can be also used as `nix run damszew/dotfiles#hm -- switch` to skip cloning
+
+#### Other software
+
+```plain
+1password
+docker-ce
+```
 
 ## Cheatsheet
 
@@ -25,18 +32,11 @@
 | rollback                                    | `nix-env --rollback`                |
 | remove old generations (keep only latest 5) | `nix-env --delete-generations +5`   |
 
-### home-manager
-
-| action                 | cmd                               |
-|------------------------|-----------------------------------|
-| upgrade home-manager   | `home-manager switch`             |
-| show generations       | `home-manager generations`        |
-| remove old generations | `home-manager remove-generations` |
-
 ### nix flakes
 
 | action                     | cmd                                          |
 |--------------------------- | -------------------------------------------- |
 | update inputs in lock file | `nix flake update`                           |
-| switch config using flake  | `nixos-rebuild switch --flake .`             |
+| nixos config switch        | `nixos-rebuild switch --flake .`             |
+| home-manager switch        | `nix run .#hm -- switch`                     |
 | remove old generations     | `nix-collect-garbage --delete-older-than 1w` |
