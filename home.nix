@@ -86,6 +86,34 @@
       }
     '';
   };
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls = "eza";
+      ll = "eza --all --long --classify";
+      la = "eza --all";
+      lt = "eza --tree";
+
+      cat = "bat -p";
+      grep = "rg";
+
+      cp = "cp -v";
+      mv = "mv -v";
+      rm = "rm -v";
+    };
+    interactiveShellInit = ''
+      fish_config theme choose "Dracula Official"
+    '';
+  };
+  home.file."${config.xdg.configHome}/fish/themes/Dracula Official.theme" = {
+    source = pkgs.fetchFromGitHub
+      {
+        owner = "dracula";
+        repo = "fish";
+        rev = "269cd7d76d5104fdc2721db7b8848f6224bdf554";
+        sha256 = "Hyq4EfSmWmxwCYhp3O8agr7VWFAflcUe8BUKh50fNfY=";
+      } + "/themes/Dracula Official.theme";
+  };
 
   programs.starship.enable = true;
   programs.direnv = {
