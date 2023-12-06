@@ -56,6 +56,9 @@
     sessionVariables = { BROWSER = "google-chrome"; };
 
     bashrcExtra = ''
+      . ~/dotfiles/bashrc
+      . $HOME/.cargo/env # normally rustup installs it
+
       extract () {
         if [ -f $1 ] ; then
           case $1 in
@@ -103,6 +106,8 @@
     };
     interactiveShellInit = ''
       set -U fish_greeting
+
+      fish_add_path /home/damian/.cargo/bin
 
       fish_config theme choose "Dracula Official"
     '';
