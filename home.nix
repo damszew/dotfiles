@@ -251,7 +251,7 @@
     };
   };
 
-  services.dropbox.enable = true;
+  # services.dropbox.enable = true;
 
   targets.genericLinux.enable = true;
   fonts.fontconfig.enable = true;
