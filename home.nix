@@ -29,7 +29,7 @@
     jq
     vscode # May cause problems with extensions on NixOS
     spotify
-    obsidian
+    # obsidian # https://github.com/NixOS/nixpkgs/issues/273611
     discord
     # ubuntu_font_family
     commit-mono
