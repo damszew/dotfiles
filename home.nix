@@ -17,6 +17,14 @@
 
   programs.home-manager.enable = true;
 
+  # https://github.com/NixOS/nixpkgs/issues/273611
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [ pkgs.lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0" ];
+    };
+  };
+
   home.packages = with pkgs; [
     htop
     bat
@@ -29,7 +37,7 @@
     jq
     vscode # May cause problems with extensions on NixOS
     spotify
-    # obsidian # https://github.com/NixOS/nixpkgs/issues/273611
+    obsidian
     discord
     # ubuntu_font_family
     commit-mono
