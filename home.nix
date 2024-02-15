@@ -81,7 +81,7 @@
             *.zip)		unzip $1		;;
             *.Z)		uncompress $1	;;
             *)			echo "'$1' cannot be extracted via extract()" ;;
-         esac
+          esac
         else
           echo "'$1' is not a valid file"
         fi
@@ -140,6 +140,10 @@
   # Ctrl-t for finding file paths
   # Alt-c for fuzzy finding cd
   programs.fzf.enable = true;
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd" ];
+  };
 
   programs.git = {
     enable = true;
