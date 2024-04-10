@@ -164,6 +164,16 @@
     };
   };
 
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "damszew";
+        email = "damian.szewczyk111@gmail.com";
+      };
+    };
+  };
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
