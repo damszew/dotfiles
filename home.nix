@@ -49,6 +49,7 @@
   programs.bash = {
     enable = true;
     shellAliases = {
+      l = "eza -l --icons --git -a";
       ls = "eza";
       ll = "eza --all --long --classify";
       la = "eza --all";
@@ -100,6 +101,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      l = "eza -l --icons --git -a";
       ls = "eza";
       ll = "eza --all --long --classify";
       la = "eza --all";
