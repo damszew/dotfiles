@@ -4,6 +4,9 @@ local wezterm = require 'wezterm'
 -- This table will hold the configuration.
 local config = {}
 
+config.check_for_updates = false
+config.show_update_window = false
+
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
 if wezterm.config_builder then
