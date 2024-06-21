@@ -234,7 +234,6 @@
       ];
     };
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
       enable-hot-corners = false;
     };
 
@@ -251,6 +250,42 @@
       binding = "<Super>Return";
       command = "x-terminal-emulator";
       name = "Open terminal";
+    };
+  };
+
+  systemd.user = {
+
+    timers = {
+      theme-switcher = {
+        Unit = {
+          Description = "theme-switcher timer";
+        };
+        Timer = {
+          OnCalendar = [
+            "*-*-* 06:00:00"
+            "*-*-* 21:00:00"
+          ];
+          Persistent = true;
+          Unit = "theme-switcher.service";
+        };
+
+        Install = {
+          WantedBy = [ "multi-user.target" ];
+        };
+
+
+      };
+    };
+
+    services = {
+      theme-switcher = {
+        Unit = {
+          Description = "theme-switcher service";
+        };
+        Service = {
+          ExecStart = ./scripts/theme-switcher.sh;
+        };
+      };
     };
   };
 
