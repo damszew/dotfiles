@@ -131,6 +131,7 @@
     aliases = {
       s = "status -s";
       l = "log --decorate --oneline -10 --graph";
+      lb = "l --branches";
       b = "branch";
       showfiles = "show --name-only";
 
