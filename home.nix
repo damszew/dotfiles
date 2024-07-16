@@ -23,6 +23,7 @@
     ripgrep
     lazygit
     git-branchless
+    git-town
     fd
     jq
     vscode # May cause problems with extensions on NixOS
@@ -132,6 +133,23 @@
       l = "log --decorate --oneline -10 --graph";
       b = "branch";
       showfiles = "show --name-only";
+
+      # git-town
+      append = "town append";
+      compress = "town compress";
+      contribute = "town contribute";
+      diff-parent = "town diff-parent";
+      hack = "town hack";
+      kill = "town kill";
+      observe = "town observe";
+      park = "town park";
+      prepend = "town prepend";
+      propose = "town propose";
+      rename-branch = "town rename-branch";
+      repo = "town repo";
+      set-parent = "town set-parent";
+      ship = "town ship";
+      sync = "town sync";
     };
     extraConfig = {
       push.autoSetupRemote = true;
