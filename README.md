@@ -34,9 +34,10 @@ docker-ce
 
 ### nix flakes
 
-| action                     | cmd                                          |
-|--------------------------- | -------------------------------------------- |
-| update inputs in lock file | `nix flake update`                           |
-| nixos config switch        | `nixos-rebuild switch --flake .`             |
-| home-manager switch        | `nix run .#hm -- switch`                     |
-| remove old generations     | `nix-collect-garbage --delete-older-than 1w` |
+| action                     | cmd                                               |
+|--------------------------- | ------------------------------------------------- |
+| update inputs in lock file | `nix flake update`                                |
+| nixos config switch        | `nixos-rebuild switch --flake .`                  |
+| home-manager init          | `nix run home-manager/master -- init --switch .` |
+| home-manager switch        | `home-manager switch --flake .`                   |
+| remove old generations     | `nix-collect-garbage --delete-older-than 1w`      |
