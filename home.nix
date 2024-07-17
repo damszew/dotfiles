@@ -151,6 +151,7 @@
       set-parent = "town set-parent";
       ship = "town ship";
       sync = "town sync";
+      sw = "town switch";
     };
     extraConfig = {
       push.autoSetupRemote = true;
