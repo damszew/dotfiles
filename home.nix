@@ -134,6 +134,7 @@
       lb = "l --branches";
       b = "branch";
       showfiles = "show --name-only";
+      amend = "commit --amend --all --no-edit";
 
       # git-town
       append = "town append";
