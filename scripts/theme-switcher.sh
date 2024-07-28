@@ -3,7 +3,7 @@ set -euox pipefail
 
 now=$(date +%H)
 
-if [[ $now -ge 6 ]] && [[ $now -lt 21 ]]; then
+if [[ $now -ge 6 ]] && [[ $now -lt 19 ]]; then
     echo "Switching to light theme"
     gsettings set org.gnome.desktop.interface color-scheme default
     gsettings set org.gnome.desktop.interface gtk-theme Yaru-olive
