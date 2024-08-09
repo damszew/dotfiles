@@ -255,42 +255,6 @@
     };
   };
 
-  systemd.user = {
-
-    timers = {
-      theme-switcher = {
-        Unit = {
-          Description = "theme-switcher timer";
-        };
-        Timer = {
-          OnCalendar = [
-            "*-*-* 06:00:00"
-            "*-*-* 21:00:00"
-          ];
-          Persistent = true;
-          Unit = "theme-switcher.service";
-        };
-
-        Install = {
-          WantedBy = [ "multi-user.target" ];
-        };
-
-
-      };
-    };
-
-    services = {
-      theme-switcher = {
-        Unit = {
-          Description = "theme-switcher service";
-        };
-        Service = {
-          ExecStart = ./scripts/theme-switcher.sh;
-        };
-      };
-    };
-  };
-
   # services.dropbox.enable = true;
 
   targets.genericLinux.enable = true;
