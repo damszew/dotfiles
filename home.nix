@@ -35,6 +35,7 @@
     taplo
     slack
     google-chrome
+    firefox
   ];
 
   programs.bash = {
@@ -54,7 +55,7 @@
       rm = "rm -v";
     };
     sessionVariables = {
-      BROWSER = "google-chrome";
+      BROWSER = "firefox";
       EDITOR = "hx";
     };
 
@@ -233,6 +234,7 @@
         "google-chrome.desktop"
         "1password.desktop"
         "discord.desktop"
+        "firefox.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
