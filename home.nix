@@ -20,6 +20,11 @@
   # changes in each release.
   home.stateVersion = "24.05";
 
+  home.sessionVariables = {
+    BROWSER = "firefox";
+    EDITOR = "hx";
+  };
+
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -56,33 +61,6 @@
     '';
   };
 
-
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      l = "eza -l --icons --git -a";
-      ls = "eza";
-      ll = "eza --all --long --classify";
-      la = "eza --all";
-      lt = "eza --tree";
-
-      cat = "bat -p";
-      grep = "rg";
-
-      cp = "cp -v";
-      mv = "mv -v";
-      rm = "rm -v";
-    };
-    sessionVariables = {
-      BROWSER = "firefox";
-      EDITOR = "hx";
-    };
-
-    bashrcExtra = ''
-      . ~/dotfiles/bashrc
-      . $HOME/.cargo/env # normally rustup installs it
-    '';
-  };
   programs.fish = {
     enable = true;
     shellAliases = {
