@@ -1,4 +1,12 @@
 { config, pkgs, ... }: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      _1password-gui = prev._1password-gui.override {
+        polkitPolicyOwners = [ "damian" ];
+      };
+    })
+  ];
+
   home.username = "damian";
   home.homeDirectory = "/home/damian";
 
@@ -36,7 +44,18 @@
     slack
     google-chrome
     firefox
+    _1password
+    _1password-gui
   ];
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host *
+          IdentityAgent ~/.1password/agent.sock
+    '';
+  };
+
 
   programs.bash = {
     enable = true;
