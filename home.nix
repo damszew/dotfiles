@@ -35,7 +35,6 @@
     just
     ripgrep
     lazygit
-    git-branchless
     git-town
     fd
     jq
