@@ -46,7 +46,6 @@
     commit-mono
     taplo
     slack
-    google-chrome
     firefox
     _1password
     _1password-gui
@@ -227,10 +226,9 @@
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "code.desktop"
-        "google-chrome.desktop"
+        "firefox.desktop"
         "1password.desktop"
         "discord.desktop"
-        "firefox.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
