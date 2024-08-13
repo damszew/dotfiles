@@ -29,7 +29,6 @@
 
   home.packages = with pkgs; [
     htop
-    yazi
     bat
     eza
     just
@@ -98,7 +97,11 @@
     enable = true;
     nix-direnv.enable = true;
   };
-
+  programs.yazi = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+  
   # OpenGL problems on non-NixOs distros
   # programs.wezterm = {
   #   enable = true;
