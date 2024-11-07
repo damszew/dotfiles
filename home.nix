@@ -134,6 +134,8 @@
       b = "branch";
       showfiles = "show --name-only";
       amend = "commit --amend --all --no-edit";
+      co = "checkout";
+      cr = "cherry-pick";
 
       # git-town
       append = "town append";
