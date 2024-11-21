@@ -45,9 +45,6 @@
     commit-mono
     taplo
     slack
-    firefox
-    _1password
-    _1password-gui
   ];
 
   programs.ssh = {
