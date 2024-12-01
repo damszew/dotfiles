@@ -70,6 +70,8 @@
       cp = "cp -v";
       mv = "mv -v";
       rm = "rm -v";
+
+      ar = "php artisan";
     };
     interactiveShellInit = ''
       set -U fish_greeting
