@@ -1,0 +1,39 @@
+[alias]
+	amend = "commit --amend --all --no-edit"
+	b = "branch"
+	co = "checkout"
+	cr = "cherry-pick"
+	l = "log --decorate --oneline -10 --graph"
+	lb = "l --branches"
+	s = "status -s"
+	showfiles = "show --name-only"
+
+	append = "town append"
+	compress = "town compress"
+	contribute = "town contribute"
+	diff-parent = "town diff-parent"
+	hack = "town hack"
+	kill = "town kill"
+	observe = "town observe"
+	park = "town park"
+	prepend = "town prepend"
+	propose = "town propose"
+	rename-branch = "town rename-branch"
+	repo = "town repo"
+	set-parent = "town set-parent"
+	ship = "town ship"
+	sw = "town switch"
+	sync = "town sync"
+
+[credential]
+	helper = "libsecret"
+
+[format]
+	pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"
+
+[push]
+	autoSetupRemote = true
+
+[user]
+	email = "damian.szewczyk111@gmail.com"
+	name = "damszew"
