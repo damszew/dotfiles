@@ -37,3 +37,6 @@
 [user]
 	email = "damian.szewczyk111@gmail.com"
 	name = "damszew"
+
+[init]
+	templatedir = "~/.config/git/templates"

@@ -20,6 +20,9 @@
 docker-ce
 ```
 
+[gitmoji-fuzzy-hook](https://gitlab.com/raabf/gitmoji-fuzzy-hook)
+
+
 ## Cheatsheet
 
 ### nix-env
