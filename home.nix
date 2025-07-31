@@ -21,7 +21,7 @@
   home.stateVersion = "24.05";
 
   home.sessionVariables = {
-    BROWSER = "firefox";
+    BROWSER = "google-chrome";
     EDITOR = "hx";
   };
 
@@ -70,8 +70,6 @@
       cp = "cp -v";
       mv = "mv -v";
       rm = "rm -v";
-
-      ar = "php artisan";
     };
     interactiveShellInit = ''
       set -U fish_greeting
@@ -136,24 +134,6 @@
       amend = "commit --amend --all --no-edit";
       co = "checkout";
       cr = "cherry-pick";
-
-      # git-town
-      append = "town append";
-      compress = "town compress";
-      contribute = "town contribute";
-      diff-parent = "town diff-parent";
-      hack = "town hack";
-      kill = "town kill";
-      observe = "town observe";
-      park = "town park";
-      prepend = "town prepend";
-      propose = "town propose";
-      rename-branch = "town rename-branch";
-      repo = "town repo";
-      set-parent = "town set-parent";
-      ship = "town ship";
-      sync = "town sync";
-      sw = "town switch";
     };
     extraConfig = {
       push.autoSetupRemote = true;
@@ -231,7 +211,7 @@
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "code.desktop"
-        "firefox.desktop"
+        "google-chrome.desktop"
         "1password.desktop"
         "discord.desktop"
       ];
