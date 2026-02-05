@@ -23,6 +23,9 @@
   home.sessionVariables = {
     BROWSER = "google-chrome";
     EDITOR = "hx";
+
+    # Fix for `git-bug` not using `IdentityAgent`
+    SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
   };
 
   programs.home-manager.enable = true;
