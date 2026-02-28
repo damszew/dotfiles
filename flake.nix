@@ -18,7 +18,6 @@
       };
     in
     {
-      hm = home-manager.defaultPackage.${system};
       homeConfigurations.damian = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -26,6 +25,11 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+      };
+      homeConfigurations.tuxedo= home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [ ./home2.nix ];
       };
 
       nixosConfigurations = {
