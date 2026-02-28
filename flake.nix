@@ -29,7 +29,7 @@
       homeConfigurations.tuxedo= home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ ./home2.nix ];
+        modules = [ ./home-2.nix ];
       };
 
       nixosConfigurations = {
