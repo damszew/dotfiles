@@ -21,8 +21,8 @@
 1password
 docker-ce
 google-chrome
-wezterm
 zed
+nixGL
 ```
 
 ## Cheatsheet

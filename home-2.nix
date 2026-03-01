@@ -94,14 +94,19 @@
     enableFishIntegration = true;
   };
 
-  # OpenGL problems on non-NixOs distros
-  # programs.wezterm = {
-  #   enable = true;
-  #   extraConfig = builtins.readFile ./wezterm.lua;
-  # };
+  programs.wezterm = {
+    enable = true;
+    extraConfig = builtins.readFile ./wezterm.lua;
+  };
 
-  home.file."${config.xdg.configHome}/wezterm/wezterm.lua" = {
-    source = ./wezterm.lua;
+  home.file.".local/bin/wezterm-nixgl" = {
+    enable = true;
+    executable = true;
+    text = ''
+      #!/bin/bash
+
+      /home/damian/.nix-profile/bin/nixGL /home/damian/.nix-profile/bin/wezterm "$@"
+    '';
   };
 
   # Ctrl-r for fuzzy find cmd history
