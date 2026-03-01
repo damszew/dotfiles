@@ -121,19 +121,23 @@
   programs.git = {
     enable = true;
 
-    userName = "damszew";
-    userEmail = "damian.szewczyk111@gmail.com";
-    aliases = {
-      s = "status -s";
-      l = "log --decorate --oneline -10 --graph";
-      lb = "l --branches";
-      b = "branch";
-      showfiles = "show --name-only";
-      amend = "commit --amend --all --no-edit";
-      co = "checkout";
-      cr = "cherry-pick";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "damszew";
+        email = "damian.szewczyk111@gmail.com";
+      };
+
+      alias = {
+        s = "status -s";
+        l = "log --decorate --oneline -10 --graph";
+        lb = "l --branches";
+        b = "branch";
+        showfiles = "show --name-only";
+        amend = "commit --amend --all --no-edit";
+        co = "checkout";
+        cr = "cherry-pick";
+      };
+
       push.autoSetupRemote = true;
       credential.helper = "store";
       format.pretty = "format:%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset";
