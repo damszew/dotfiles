@@ -18,6 +18,20 @@
 
     # Fix for `git-bug` not using `IdentityAgent`
     SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
+
+    # Wayland: Electron apps (VSCode, Slack, Discord, Obsidian)
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+
+    # Wayland: Firefox / Mozilla apps
+    MOZ_ENABLE_WAYLAND = "1";
+
+    # Wayland: Qt apps (prefer Wayland, fall back to XCB/X11)
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+    # Wayland: GTK apps (prefer Wayland, fall back to X11)
+    GDK_BACKEND = "wayland,x11";
   };
 
   programs.home-manager.enable = true;
