@@ -35,13 +35,13 @@ nix-collect-garbage --delete-older-than 1w   # prune old generations
 
 ## Key structural notes
 
-- **nixGL** — a wrapper that patches OpenGL/GPU library paths so Nix-built apps can use the host system's GPU drivers. Required on non-NixOS machines with proprietary or hybrid GPUs (hence the tuxedo profile uses it; the damian VM profile does not).
+- **nixGL** — a wrapper that patches OpenGL/GPU library paths so Nix-built apps can use the host system's GPU drivers. Required on non-NixOS machines with proprietary or hybrid GPUs (hence the tuxedo profile uses it; the damian VM profile does not). nixGL is a flake input (`github:nix-community/nixGL`) passed to the tuxedo config via `extraSpecialArgs`; packages are activated with `targets.genericLinux.nixGL.packages` and individual apps wrapped with `config.lib.nixGL.wrap <pkg>`.
 
 - **Notable files** — `wezterm.lua` is the shared WezTerm config read by both profiles. `helix/` contains a standalone Helix config (legacy; the active config is inlined in the nix files). `wallpaper.png` is referenced directly by its absolute path in dconf.
 
 - **Two profiles, mostly duplicated** — `home.nix` and `home-2.nix` share the same packages, fish config, helix config, and git aliases. The main differences:
   - `home.nix` uses `programs.git` with the `pkgs.gitFull` package and `credential.helper = "libsecret"`; `home-2.nix` uses raw `settings` attrset and `credential.helper = "store"`.
-  - `home-2.nix` enables `programs.wezterm` directly and installs a `wezterm-nixgl` wrapper script; `home.nix` disables the wezterm program and symlinks `wezterm.lua` manually (OpenGL workaround for non-nixGL systems).
+  - `home-2.nix` enables `programs.wezterm` directly and wraps it with `config.lib.nixGL.wrap` for GPU support; `home.nix` disables the wezterm program and symlinks `wezterm.lua` manually (OpenGL workaround for non-nixGL systems).
   - `home-2.nix` sets Wayland session variables (`NIXOS_OZONE_WL`, `MOZ_ENABLE_WAYLAND`, `QT_QPA_PLATFORM`, `GDK_BACKEND`, etc.) for native Wayland support; `home.nix` does not.
   - `home.nix` applies a 1Password polkit overlay and sets GNOME `favorite-apps`; `home-2.nix` does not.
   - `home.nix` adds `git-town` to packages; `home-2.nix` does not.

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, nixgl, ... }: {
   home.username = "damian";
   home.homeDirectory = "/home/damian";
 
@@ -110,17 +110,8 @@
 
   programs.wezterm = {
     enable = true;
+    package = config.lib.nixGL.wrap pkgs.wezterm;
     extraConfig = builtins.readFile ./wezterm.lua;
-  };
-
-  home.file.".local/bin/wezterm-nixgl" = {
-    enable = true;
-    executable = true;
-    text = ''
-      #!/bin/bash
-
-      /home/damian/.nix-profile/bin/nixGL /home/damian/.nix-profile/bin/wezterm "$@"
-    '';
   };
 
   # Ctrl-r for fuzzy find cmd history
@@ -238,6 +229,9 @@
     };
   };
 
-  targets.genericLinux.enable = true;
+  targets.genericLinux = {
+    enable = true;
+    nixGL.packages = nixgl.packages;
+  };
   fonts.fontconfig.enable = true;
 }

@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixGL.url = "github:nix-community/nixGL";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -30,6 +31,7 @@
         inherit pkgs;
 
         modules = [ ./home-2.nix ];
+        extraSpecialArgs = { nixgl = inputs.nixGL; };
       };
 
       nixosConfigurations = {
