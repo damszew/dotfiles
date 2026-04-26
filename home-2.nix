@@ -69,7 +69,7 @@
       set -U fish_greeting
 
       fish_add_path /home/damian/.cargo/bin
-      fish_add_path /home/damian/.config/herd-lite/bin
+      fish_add_path /home/damian/.local/bin
 
       fish_config theme choose "Dracula Official"
     '';
