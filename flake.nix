@@ -26,7 +26,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      homeConfigurations.tuxedo= home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.tuxedo = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [ ./home-2.nix ];
