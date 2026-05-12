@@ -45,6 +45,7 @@
     lazygit
     fd
     jq
+    gh
     vscode
     spotify
     obsidian
