@@ -9,7 +9,7 @@ Nix-based dotfiles managed with [home-manager](https://github.com/nix-community/
 - `home.nix` — `damian` profile (non-NixOS, e.g. a VM or generic Linux without nixGL)
 - `home-2.nix` — `tuxedo` profile (non-NixOS with nixGL for OpenGL/GPU support)
 
-Both are wired into `flake.nix` as `homeConfigurations`. There is also a legacy `nixosConfigurations.nixos-vm` entry (uses `home.nix` + `configuration.nix`), but NixOS support is planned for removal.
+Both are wired into `flake.nix` as `homeConfigurations`.
 
 ## Applying changes
 

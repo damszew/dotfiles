@@ -34,29 +34,5 @@
         extraSpecialArgs = { nixgl = inputs.nixGL; };
       };
 
-      nixosConfigurations = {
-        nixos-vm = nixpkgs.lib.nixosSystem
-          {
-            inherit system;
-
-            specialArgs = { inherit inputs; };
-            modules = [
-              # shared
-              ./configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  users.damian = import ./home.nix;
-                };
-              }
-
-              # per-machine
-              ./hardware-configuration.nix
-              { networking.hostName = "nixos-vm"; }
-            ];
-          };
-      };
     };
 }
