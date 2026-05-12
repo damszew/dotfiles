@@ -46,6 +46,7 @@
     fd
     jq
     gh
+    devenv
     vscode
     spotify
     obsidian
@@ -85,6 +86,8 @@
 
       fish_add_path /home/damian/.cargo/bin
       fish_add_path /home/damian/.local/bin
+
+      # devenv hook fish | source
 
       fish_config theme choose "Dracula Official"
     '';
