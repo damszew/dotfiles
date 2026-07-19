@@ -47,6 +47,7 @@
     jq
     gh
     devenv
+    git-branchless
     vscode
     spotify
     obsidian
@@ -89,18 +90,22 @@
 
       # devenv hook fish | source
 
-      fish_config theme choose "Dracula Official"
+      # DraculaDynamic ships [light]/[dark] blocks; fish picks the block that
+      # matches $fish_terminal_color_theme (the terminal's reported background).
+      fish_config theme choose DraculaDynamic
     '';
+    functions = {
+      # Reapply the theme whenever the terminal switches between a light and
+      # dark background, so open shells follow the system theme live.
+      _update_fish_theme = {
+        body = ''fish_config theme choose DraculaDynamic'';
+        onVariable = "fish_terminal_color_theme";
+        description = "Reapply DraculaDynamic when the terminal's light/dark background changes";
+      };
+    };
   };
-  home.file."${config.xdg.configHome}/fish/themes/Dracula Official.theme" = {
-    source = pkgs.fetchFromGitHub
-      {
-        owner = "dracula";
-        repo = "fish";
-        rev = "269cd7d76d5104fdc2721db7b8848f6224bdf554";
-        sha256 = "Hyq4EfSmWmxwCYhp3O8agr7VWFAflcUe8BUKh50fNfY=";
-      } + "/themes/Dracula Official.theme";
-  };
+  home.file."${config.xdg.configHome}/fish/themes/DraculaDynamic.theme".source =
+    ./fish/themes/DraculaDynamic.theme;
 
   programs.starship.enable = true;
   programs.direnv = {
