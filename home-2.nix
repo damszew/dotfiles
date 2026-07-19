@@ -60,10 +60,8 @@
 
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ~/.1password/agent.sock
-    '';
+    enableDefaultConfig = false;
+    settings."*".identityAgent = "~/.1password/agent.sock";
   };
 
   programs.fish = {
@@ -115,6 +113,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    shellWrapperName = "yy";
   };
 
   programs.wezterm = {
