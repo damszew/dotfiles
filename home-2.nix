@@ -19,6 +19,11 @@
     # Fix for `git-bug` not using `IdentityAgent`
     SSH_AUTH_SOCK = "${config.home.homeDirectory}/.1password/agent.sock";
 
+    # Compilation cache for rust (rustup-managed toolchains in ~/.cargo/bin).
+    # Shared across all projects; size/eviction left at sccache defaults.
+    RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
+    SCCACHE_DIR = "${config.xdg.cacheHome}/sccache";
+
     # Wayland: Electron apps (VSCode, Slack, Discord, Obsidian)
     NIXOS_OZONE_WL = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
@@ -56,6 +61,7 @@
     commit-mono
     taplo
     slack
+    sccache
   ];
 
   programs.ssh = {
