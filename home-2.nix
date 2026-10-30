@@ -41,6 +41,14 @@
 
   programs.home-manager.enable = true;
 
+  services.home-manager.autoUpgrade = {
+    enable = true;
+    frequency = "weekly";
+    useFlake = true;
+    flakeDir = "${config.home.homeDirectory}/dotfiles";
+    preSwitchCommands = ["nix flake update"];
+  };
+
   home.packages = with pkgs; [
     htop
     bat

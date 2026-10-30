@@ -33,6 +33,8 @@
         modules = [ ./home-2.nix ];
         extraSpecialArgs = { nixgl = inputs.nixGL; };
       };
+      # `home-manager switch --flake .` (used by autoUpgrade) resolves user@host first
+      homeConfigurations."damian@tuxedo" = self.homeConfigurations.tuxedo;
 
     };
 }
