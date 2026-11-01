@@ -38,6 +38,13 @@
     preSwitchCommands = ["nix flake update"];
   };
 
+  # Runs on Sunday so it doesn't overlap with the Monday autoUpgrade
+  nix.gc = {
+    automatic = true;
+    dates = "Sun";
+    options = "--delete-older-than 1w";
+  };
+
   home.packages = with pkgs; [
     htop
     bat
